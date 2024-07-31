@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Location Based Access</title>
+    <script>
+        const validUsername = "user";
+        const validPassword = "pass";
+
+        function askLocation() {
+            let location = prompt("Please enter your location:");
+
+            if (location) {
+                location = location.toLowerCase();
+                let username = prompt("Please enter your username:");
+                let password = prompt("Please enter your password:");
+
+                if (username === validUsername && password === validPassword) {
+                    if (location === "punjab") {
+                        alert("Welcome to Punjab!");
+                        window.location.href = "punjab_map.html"; // Change this to the actual map page URL for Punjab
+                    } else if (location === "haryana") {
+                        alert("Welcome to Haryana!");
+                        window.location.href = "haryana_map.html"; // Change this to the actual map page URL for Haryana
+                    } else if (location === "chandigarh") {
+                        alert("Welcome to Chandigarh!");
+                        window.location.href = "chandigarh_map.html"; // Change this to the actual map page URL for Chandigarh
+                    } else {
+                        alert("Access Denied");
+                    }
+                } else {
+                    alert("Wrong credentials");
+                }
+            } else {
+                alert("Access Denied");
+            }
+        }
+    </script>
+</head>
+<body onload="askLocation()">
+    <h1>Welcome to the Location Based Access Page</h1>
+    <p>This page requires you to provide your location for access.</p>
+</body>
+</html>
